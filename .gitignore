@@ -99,3 +99,5 @@ target/SpringMVCHibernate/WEB-INF/spring/root-context.xml
 target/SpringMVCHibernate/WEB-INF/views/person.jsp
 target/SpringMVCHibernate/WEB-INF/web.xml
 SpringMVCHibernate.iml
+.idea/uiDesigner.xml
+target/*

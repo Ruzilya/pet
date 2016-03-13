@@ -1,16 +1,19 @@
-package com.journaldev.spring.service;
+package ru.kpfu.itis.pet.g2048.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.journaldev.spring.dao.PersonDAO;
-import com.journaldev.spring.model.Person;
+import ru.kpfu.itis.pet.g2048.dao.PersonDAO;
+import ru.kpfu.itis.pet.g2048.model.Person;
+import ru.kpfu.itis.pet.g2048.service.PersonService;
 
 @Service
 public class PersonServiceImpl implements PersonService {
-	
+
+	@Autowired
 	private PersonDAO personDAO;
 
 	public void setPersonDAO(PersonDAO personDAO) {

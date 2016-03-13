@@ -1,4 +1,4 @@
-package com.journaldev.spring.model;
+package ru.kpfu.itis.pet.g2048.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

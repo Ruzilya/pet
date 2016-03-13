@@ -35,14 +35,10 @@
 	</beans:bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
-	<beans:bean id="hibernate4AnnotatedSessionFactory"
+	<beans:bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="annotatedClasses">
-			<beans:list>
-				<beans:value>com.journaldev.spring.model.Person</beans:value>
-			</beans:list>
-		</beans:property>
+		<beans:property name="packagesToScan" value="ru.kpfu.itis.pet.g2048.model"/>
 		<beans:property name="hibernateProperties">
 			<beans:props>
 				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
@@ -52,20 +48,13 @@
 			</beans:props>
 		</beans:property>
 	</beans:bean>
-	
-	<beans:bean id="personDAO" class="com.journaldev.spring.dao.PersonDAOImpl">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
-	<beans:bean id="personService" class="com.journaldev.spring.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
-	</beans:bean>
-	<context:component-scan base-package="com.journaldev.spring" />
-	
+
+	<context:component-scan base-package="ru.kpfu.itis.pet.g2048"/>
+
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+		<beans:property name="sessionFactory" ref="sessionFactory" />
 	</beans:bean>
-
 
 </beans:beans>
