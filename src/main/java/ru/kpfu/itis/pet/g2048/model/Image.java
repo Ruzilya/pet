@@ -22,7 +22,7 @@ public class Image {
 
     @ManyToOne
     @JoinColumn(name="cv_id")
-    private Theme cellValue;
+    private CellValue cellValue;
 
     public int getId() {
         return id;
@@ -48,11 +48,11 @@ public class Image {
         this.theme = theme;
     }
 
-    public Theme getCellValue() {
+    public CellValue getCellValue() {
         return cellValue;
     }
 
-    public void setCellValue(Theme cellValue) {
+    public void setCellValue(CellValue cellValue) {
         this.cellValue = cellValue;
     }
 
