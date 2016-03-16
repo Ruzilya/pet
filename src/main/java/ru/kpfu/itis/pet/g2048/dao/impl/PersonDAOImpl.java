@@ -1,4 +1,4 @@
-package ru.kpfu.itis.pet.g2048.dao;
+package ru.kpfu.itis.pet.g2048.dao.impl;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import ru.kpfu.itis.pet.g2048.dao.PersonDAO;
 import ru.kpfu.itis.pet.g2048.model.Person;
 
 @Repository
