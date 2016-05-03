@@ -101,3 +101,4 @@ target/SpringMVCHibernate/WEB-INF/web.xml
 SpringMVCHibernate.iml
 .idea/uiDesigner.xml
 target/*
+.idea/*
