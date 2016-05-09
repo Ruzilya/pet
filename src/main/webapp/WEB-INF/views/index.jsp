@@ -26,9 +26,9 @@
 <script type="text/javascript">
   function changeTheme(checkbox_id) {
       if(document.getElementById(checkbox_id).checked) {
-        $("#cssLink").attr("href", '<c:url value="<%=Constants.THEME_CSS_PATH %>"/>');
-      } else {
         $("#cssLink").attr("href", '<c:url value="<%=Constants.DEFAULT_CSS_PATH %>"/>');
+      } else {
+        $("#cssLink").attr("href", '<c:url value="<%=Constants.THEME_CSS_PATH %>"/>');
       }
     }
 </script>
@@ -48,7 +48,7 @@
     </div>
 
     <div>
-      <input type = checkbox id = "cb1" onchange='changeTheme("cb1")' checked/>Использовать специальную тему
+      <input type = checkbox id = "cb1" onchange='changeTheme("cb1")'/>Использовать стандартную тему
     </div>
 
     <div class="game-container">
@@ -93,11 +93,12 @@
     </div>
 
     <p class="game-explanation">
-      <strong class="important">Как играть:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+      <strong class="important">Правила игры:</strong> Для управления используйте <strong>стрелики</strong> на клавиатуре. При соединении двух одинаковых цифр они <strong>суммируются.</strong>
     </p>
     <hr>
     <p>
-    Created by Ruzilya Saubanova and Ruslan Fakhrudionv. Based on <i>http://git.io/2048</i> by <i>Gabriele Cirulli.</i>
+    АВТОРЫ: <a href="https://vk.com/sruzilya">Рузиля Саубанова</a> и <a href="https://vk.com/forsazh">Руслан Фахрутдинов</a>.
+      <br>Based on <i>http://git.io/2048</i> by <i>Gabriele Cirulli.</i>
     </p>
   </div>
 
