@@ -1,7 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
+<%@ page contentType="text/html;  charset=utf-8" %>
 <html>
 <head>
   <title>Results</title>
@@ -14,20 +15,23 @@
 </head>
 <body>
 
-<h3>Results</h3>
-<c:if test="${!empty listUsers}">
-  <table class="tg">
-    <tr>
-      <th width="120">UserName</th>
-      <th width="120">The best result</th>
-    </tr>
-    <c:forEach items="${listUsers}" var="user">
-      <tr>
-        <td>${user.name}</td>
-        <td>${user.score}</td>
-      </tr>
-    </c:forEach>
-  </table>
-</c:if>
+<div class="container">
+  <jsp:include page="templates/login_logout.jsp" />
+    <h3>Results</h3>
+    <c:if test="${!empty listUsers}">
+      <table class="tg">
+        <tr>
+          <th width="120">UserName</th>
+          <th width="120">The best result</th>
+        </tr>
+        <c:forEach items="${listUsers}" var="user">
+          <tr>
+            <td>${user.name}</td>
+            <td>${user.score}</td>
+          </tr>
+        </c:forEach>
+      </table>
+    </c:if>
+  </div>
 </body>
 </html>
