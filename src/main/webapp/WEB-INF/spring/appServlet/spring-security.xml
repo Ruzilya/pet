@@ -28,15 +28,20 @@
 
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userDetailsServiceImpl">
-            <!--<password-encoder ref="encoder"></password-encoder>-->
-            <password-encoder hash="plaintext"></password-encoder>
+            <password-encoder ref="encoder"></password-encoder>
         </authentication-provider>
     </authentication-manager>
     <beans:bean id="userDetailsServiceImpl" class="ru.kpfu.itis.pet.g2048.service.impl.UserDetailsServiceImpl"></beans:bean>
 
-    <!--<beans:bean id="encoder"-->
-                <!--class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
-        <!--<beans:constructor-arg name="strength" value="11"/>-->
-    <!--</beans:bean>-->
+    <beans:bean id="encoder"
+                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <beans:constructor-arg name="strength" value="11" />
+    </beans:bean>
+
+    <beans:bean id="authProvider"
+          class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="userDetailsServiceImpl" />
+        <beans:property name="passwordEncoder" ref="encoder" />
+    </beans:bean>
 
 </beans:beans>

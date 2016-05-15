@@ -25,7 +25,7 @@
 
 <c:choose>
   <c:when test="${pageContext.request.userPrincipal.name == null}">
-    <a href="#">Зарегистрироваться</a> или <a href="login">Войти</a>, чтобы другие участники тоже видели Ваши результаты.
+    <a href="registration">Зарегистрироваться</a> или <a href="login">Войти</a>, чтобы другие участники тоже видели Ваши результаты.
   </c:when>
   <c:otherwise>
     ${pageContext.request.userPrincipal.name} | <a

@@ -24,13 +24,26 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <%--<script>--%>
+    <%--function passCheck() {--%>
+      <%--var pass1 = document.getElementById("pass1").value;--%>
+      <%--var pass2 = document.getElementById("pass2").value;--%>
+      <%--var ok = true;--%>
+      <%--if (pass1 != pass2) {--%>
+        <%--alert("Passwords Do not match");--%>
+        <%--ok = false;--%>
+      <%--}--%>
+      <%--return ok;--%>
+    <%--}--%>
+  <%--</script>--%>
 </head>
 
 <body>
 
 <div class="container">
 
-  <form:form method="POST" modelAttribute="userForm" class="form-signin">
+  <%--<form:form method="POST" modelAttribute="userForm" class="form-signin" onsubmit="return passCheck()">--%>
+    <form:form method="POST" modelAttribute="userForm" class="form-signin">
     <h2 class="form-signin-heading">Create your account</h2>
     <spring:bind path="username">
       <div class="form-group ${status.error ? 'has-error' : ''}">
@@ -42,14 +55,14 @@
 
     <spring:bind path="password">
       <div class="form-group ${status.error ? 'has-error' : ''}">
-        <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+        <form:input type="password" id="pass1" path="password" class="form-control" placeholder="Password"></form:input>
         <form:errors path="password"></form:errors>
       </div>
     </spring:bind>
 
     <spring:bind path="passwordConfirm">
       <div class="form-group ${status.error ? 'has-error' : ''}">
-        <form:input type="password" path="passwordConfirm" class="form-control"
+        <form:input type="password" id="pass2" path="passwordConfirm" class="form-control"
                     placeholder="Confirm your password"></form:input>
         <form:errors path="passwordConfirm"></form:errors>
       </div>
@@ -61,6 +74,6 @@
 </div>
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<%--<script src="${contextPath}/resources/js/bootstrap.min.js"></script>--%>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

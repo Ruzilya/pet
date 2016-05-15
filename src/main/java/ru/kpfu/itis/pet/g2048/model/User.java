@@ -20,6 +20,7 @@ public class User {
 
     private int score;
 
+    @Transient
     private String passwordConfirm;
 
     @OneToOne(cascade=CascadeType.ALL)

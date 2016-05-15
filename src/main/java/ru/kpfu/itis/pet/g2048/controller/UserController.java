@@ -1,6 +1,7 @@
 package ru.kpfu.itis.pet.g2048.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,6 +28,9 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
+    @Autowired
+    private PasswordEncoder encoder;
+
     @RequestMapping(value = "/results", method = RequestMethod.GET)
     public String users(Model model) {
         model.addAttribute("user", new User());
@@ -43,7 +47,11 @@ public class UserController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
+//        userForm.setPassword(encoder.encode(userForm.getPassword()));
+//        userForm.setPasswordConfirm(encoder.encode(userForm.getPasswordConfirm()));
+
         userValidator.validate(userForm, bindingResult);
+        userForm.setPassword(encoder.encode(userForm.getPassword()));
 
         if (bindingResult.hasErrors()) {
             return "registration";
