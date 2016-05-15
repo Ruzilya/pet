@@ -34,12 +34,22 @@
 </script>
 
   <div class="container">
-    <jsp:include page="templates/login_logout.jsp" />
+    <div><jsp:include page="templates/login_logout.jsp" /></div>
+    <div><jsp:include page="templates/menu.jsp" /></div>
     <div class="heading">
       <h1 class="title">2048</h1>
       <div class="scores-container">
         <div class="score-container">0</div>
-        <div class="best-container">0</div>
+        <div class="best-container">0
+          <%--<c:choose>--%>
+          <%--<c:when test="${-pageContext.request.user == null}">--%>
+            <%--0--%>
+          <%--</c:when>--%>
+          <%--<c:otherwise>--%>
+            <%--${-pageContext.request.user.score}--%>
+          <%--</c:otherwise>--%>
+          <%--</c:choose>--%>
+        </div>
       </div>
     </div>
 

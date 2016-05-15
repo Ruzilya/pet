@@ -16,7 +16,8 @@
 <body>
 
 <div class="container">
-  <jsp:include page="templates/login_logout.jsp" />
+  <div><jsp:include page="templates/login_logout.jsp" /></div>
+  <div><jsp:include page="templates/menu.jsp" /></div>
     <h3>Results</h3>
     <c:if test="${!empty listUsers}">
       <table class="tg">
@@ -24,10 +25,10 @@
           <th width="120">UserName</th>
           <th width="120">The best result</th>
         </tr>
-        <c:forEach items="${listUsers}" var="user">
+        <c:forEach items="${listUsers}" var="u">
           <tr>
-            <td>${user.name}</td>
-            <td>${user.score}</td>
+            <td>${u.username}</td>
+            <td>${u.score}</td>
           </tr>
         </c:forEach>
       </table>
