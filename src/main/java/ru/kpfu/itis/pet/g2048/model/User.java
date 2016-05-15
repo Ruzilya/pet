@@ -14,11 +14,20 @@ public class User {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String username;
 
-    private int password;
+    private String password;
 
     private int score;
+
+    private String passwordConfirm;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinTable(name="user_roles",
+            joinColumns = {@JoinColumn(name="user_id", referencedColumnName="user_id")},
+            inverseJoinColumns = {@JoinColumn(name="role_id", referencedColumnName="role_id")}
+    )
+    private Role role;
 
     public int getId() {
         return id;
@@ -28,19 +37,19 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = name;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -52,11 +61,28 @@ public class User {
         this.score = score;
     }
 
+    @Transient
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
                 ", password=" + password +
                 ", score=" + score +
                 '}';

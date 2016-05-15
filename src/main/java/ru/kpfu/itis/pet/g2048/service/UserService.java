@@ -1,6 +1,5 @@
 package ru.kpfu.itis.pet.g2048.service;
 
-import ru.kpfu.itis.pet.g2048.model.Person;
 import ru.kpfu.itis.pet.g2048.model.User;
 
 import java.util.List;
@@ -10,4 +9,6 @@ import java.util.List;
  */
 public interface UserService {
     public List<User> users();
+    void save(User user);
+    User findByUsername(String username);
 }

@@ -1,5 +1,6 @@
 package ru.kpfu.itis.pet.g2048.dao.impl;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -66,6 +67,10 @@ public abstract class GenericDaoImpl<T, I extends Serializable> implements Gener
 
     public T uniqueResult(Query query) {
         return (T) query.uniqueResult();
+    }
+
+    protected Criteria createEntityCriteria(){
+        return getSession().createCriteria(getaClass());
     }
 }
 

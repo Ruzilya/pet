@@ -6,8 +6,15 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
+    <beans:import resource="servlet-context.xml"/>
+
     <http auto-config="true">
-        <intercept-url pattern="/any**" access="ROLE_USER" />
+
+        <!-- access denied page -->
+        <access-denied-handler error-page="/403" />
+
+        <intercept-url pattern="/any**" access="ROLE_USER"/>
+        <!--<intercept-url pattern="/index" access="ROLE_ADMIN"/>-->
         <form-login
                 login-page="/login"
                 default-target-url="/index"
@@ -19,12 +26,17 @@
         <csrf/>
     </http>
 
-    <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="admin" password="admin" authorities="ROLE_USER" />
-            </user-service>
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailsServiceImpl">
+            <!--<password-encoder ref="encoder"></password-encoder>-->
+            <password-encoder hash="plaintext"></password-encoder>
         </authentication-provider>
     </authentication-manager>
+    <beans:bean id="userDetailsServiceImpl" class="ru.kpfu.itis.pet.g2048.service.impl.UserDetailsServiceImpl"></beans:bean>
+
+    <!--<beans:bean id="encoder"-->
+                <!--class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
+        <!--<beans:constructor-arg name="strength" value="11"/>-->
+    <!--</beans:bean>-->
 
 </beans:beans>
