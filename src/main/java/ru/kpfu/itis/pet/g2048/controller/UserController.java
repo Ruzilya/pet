@@ -5,13 +5,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import ru.kpfu.itis.pet.g2048.model.User;
 import ru.kpfu.itis.pet.g2048.service.SecurityService;
 import ru.kpfu.itis.pet.g2048.service.UserService;
 import ru.kpfu.itis.pet.g2048.validator.UserValidator;
+
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 
 /**
  * Created by RuzilyaS on 13-Mar-16.
@@ -63,4 +64,23 @@ public class UserController {
 
         return "redirect:/index";
     }
+
+    @RequestMapping(value = "/change-best-score", method = RequestMethod.POST)
+    @ResponseBody
+    public String changeBestScore(@RequestBody User user) {
+//        Principal userPrincipal = request.getUserPrincipal();
+//        Principal userPrincipal = null;
+
+//        User user = null;
+//        if(userPrincipal!=null){
+//            user = userService.findByUsername(userPrincipal.getName());
+        User databaseUser  = userService.findByUsername(user.getUsername());
+            if(databaseUser!=null){
+                databaseUser.setScore(user.getScore());
+                userService.update(databaseUser);
+            }
+//        }
+        return "index";
+    }
+
 }

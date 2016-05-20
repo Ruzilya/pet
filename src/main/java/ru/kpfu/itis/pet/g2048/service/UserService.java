@@ -10,5 +10,6 @@ import java.util.List;
 public interface UserService {
     public List<User> users();
     void save(User user);
+    void update(User user);
     User findByUsername(String username);
 }

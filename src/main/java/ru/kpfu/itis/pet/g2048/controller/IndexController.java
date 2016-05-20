@@ -27,7 +27,8 @@ public class IndexController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String users(HttpServletRequest request) {
         Principal userPrincipal = request.getUserPrincipal();
-        User user = null;
+        User user = new User();
+        user.setScore(0);
         if(userPrincipal!=null){
             user = userService.findByUsername(userPrincipal.getName());
         }
