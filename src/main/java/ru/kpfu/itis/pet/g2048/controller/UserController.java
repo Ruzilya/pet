@@ -11,9 +11,6 @@ import ru.kpfu.itis.pet.g2048.service.SecurityService;
 import ru.kpfu.itis.pet.g2048.service.UserService;
 import ru.kpfu.itis.pet.g2048.validator.UserValidator;
 
-import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
-
 /**
  * Created by RuzilyaS on 13-Mar-16.
  */
@@ -48,9 +45,6 @@ public class UserController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
-//        userForm.setPassword(encoder.encode(userForm.getPassword()));
-//        userForm.setPasswordConfirm(encoder.encode(userForm.getPasswordConfirm()));
-
         userValidator.validate(userForm, bindingResult);
         userForm.setPassword(encoder.encode(userForm.getPassword()));
 
@@ -68,18 +62,11 @@ public class UserController {
     @RequestMapping(value = "/change-best-score", method = RequestMethod.POST)
     @ResponseBody
     public String changeBestScore(@RequestBody User user) {
-//        Principal userPrincipal = request.getUserPrincipal();
-//        Principal userPrincipal = null;
-
-//        User user = null;
-//        if(userPrincipal!=null){
-//            user = userService.findByUsername(userPrincipal.getName());
         User databaseUser  = userService.findByUsername(user.getUsername());
             if(databaseUser!=null){
                 databaseUser.setScore(user.getScore());
                 userService.update(databaseUser);
             }
-//        }
         return "index";
     }
 

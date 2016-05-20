@@ -1,7 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;  charset=utf-8" %>
 <html>
 <head>
   <title>Login Page</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+  <link rel="stylesheet" href='<c:url value="/resources/style/bootstrap.min.css" />' />
   <style>
     .error {
       padding: 15px;
@@ -23,20 +28,15 @@
       border-color: #bce8f1;
     }
 
-    #login-box {
-      width: 300px;
-      padding: 20px;
-      margin: 100px auto;
-      background: #fff;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border: 1px solid #000;
+    .custom-container {
+      width: 500px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body onload='document.loginForm.username.focus();'>
 
-<div class="container">
+<div class="custom-container">
   <h1>Spring Security Custom Login Form (XML)</h1>
 
   <h2>Login with Username and Password</h2>
@@ -54,12 +54,14 @@
 
     <label for="password">Password:</label>
     <input type="password" class="form-control" name="password" id="password"/>
-
+    <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <input type="hidden" name="${_csrf.parameterName}"
            value="${_csrf.token}" />
   </form>
 </div>
+
+
 
 </body>
 </html>
