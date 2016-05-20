@@ -37,9 +37,7 @@
 <body onload='document.loginForm.username.focus();'>
 
 <div class="container">
-<h1>Spring Security Custom Login Form (XML)</h1>
-
-<div id="login-box">
+  <h1>Spring Security Custom Login Form (XML)</h1>
 
   <h2>Login with Username and Password</h2>
 
@@ -50,30 +48,18 @@
     <div class="msg">${msg}</div>
   </c:if>
 
-  <form name='loginForm'
-        action="<c:url value='j_spring_security_check' />" method='POST'>
+  <form name='loginForm' action="<c:url value='j_spring_security_check' />" method='POST' class="form-signin">
+    <label for="username">User:</label>
+    <input type="text" class="form-control" name="username" id="username"/>
 
-    <table>
-      <tr>
-        <td>User:</td>
-        <td><input type='text' name='username' value=''></td>
-      </tr>
-      <tr>
-        <td>Password:</td>
-        <td><input type='password' name='password' /></td>
-      </tr>
-      <tr>
-        <td colspan='2'><input name="submit" type="submit"
-                               value="submit" /></td>
-      </tr>
-    </table>
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" name="password" id="password"/>
 
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <input type="hidden" name="${_csrf.parameterName}"
            value="${_csrf.token}" />
-
   </form>
 </div>
-  </div>
 
 </body>
 </html>
