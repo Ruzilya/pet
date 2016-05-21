@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;  charset=utf-8" %>
 <html>
 <head>
-  <title>Login Page</title>
+  <title>Авторизация</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
@@ -37,9 +37,9 @@
 <body onload='document.loginForm.username.focus();'>
 
 <div class="custom-container">
-  <h1>Spring Security Custom Login Form (XML)</h1>
+  <h1>Авторизация</h1>
 
-  <h2>Login with Username and Password</h2>
+  <h2>Введите свой логин и пароль</h2>
 
   <c:if test="${not empty error}">
     <div class="error">${error}</div>
@@ -49,19 +49,16 @@
   </c:if>
 
   <form name='loginForm' action="<c:url value='j_spring_security_check' />" method='POST' class="form-signin">
-    <label for="username">User:</label>
+    <label for="username">Логин:</label>
     <input type="text" class="form-control" name="username" id="username"/>
 
-    <label for="password">Password:</label>
+    <label for="password">Пароль:</label>
     <input type="password" class="form-control" name="password" id="password"/>
     <br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
     <input type="hidden" name="${_csrf.parameterName}"
            value="${_csrf.token}" />
   </form>
 </div>
-
-
-
 </body>
 </html>

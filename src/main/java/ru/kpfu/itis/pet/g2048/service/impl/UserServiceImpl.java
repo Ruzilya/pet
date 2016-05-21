@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public void save(User user) {
-//        user.setPassword(user.getPassword());
         user.setRole(roleDao.findByName("user"));
         userDao.save(user);
     }

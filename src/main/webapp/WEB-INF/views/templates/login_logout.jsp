@@ -25,11 +25,11 @@
 
 <c:choose>
   <c:when test="${pageContext.request.userPrincipal.name == null}">
-    <a href="registration">Зарегистрироваться</a> или <a href="login">Войти</a>, чтобы другие участники тоже видели Ваши результаты.
+    <a href="registration">Зарегистрироваться</a> или <a href="login">Войти</a>, чтобы Ваш рекорд был сохранен.
   </c:when>
   <c:otherwise>
     ${pageContext.request.userPrincipal.name} | <a
-          href="javascript:formSubmit()"> Выйти</a>
+          href="javascript:formSubmit()">Выйти</a>
   </c:otherwise>
 </c:choose>
 </body>

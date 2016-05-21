@@ -94,7 +94,7 @@
     </div>
 
     <div class="above-game">
-        <p class="game-intro">Cоединяй числа и доберись до Победы!</p>
+        <p class="game-intro">Cоединяй числа и поставь рекорд!</p>
         <a class="restart-button">Новая игра</a>
     </div>
 

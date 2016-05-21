@@ -5,7 +5,7 @@
 <%@ page contentType="text/html;  charset=utf-8" %>
 <html>
 <head>
-  <title>Results</title>
+  <title>Таблица рекордов</title>
   <style type="text/css">
     .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
     .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -18,12 +18,12 @@
 <div class="container">
   <div><jsp:include page="templates/login_logout.jsp" /></div>
   <div><jsp:include page="templates/menu.jsp" /></div>
-    <h3>Results</h3>
+    <h3>Таблица рекордов</h3>
     <c:if test="${!empty listUsers}">
       <table class="tg">
         <tr>
-          <th width="120">UserName</th>
-          <th width="120">The best result</th>
+          <th width="120">Логин</th>
+          <th width="120">Рекорд</th>
         </tr>
         <c:forEach items="${listUsers}" var="u">
           <tr>
