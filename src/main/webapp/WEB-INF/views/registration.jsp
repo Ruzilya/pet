@@ -53,6 +53,10 @@
 
 <div class="custom-container">
 
+  <div>
+    <a href="index">Вернуться к игре</a>
+  </div>
+
   <%--<form:form method="POST" modelAttribute="userForm" class="form-signin" onsubmit="return passCheck()">--%>
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
     <h1>Регистрация</h1>

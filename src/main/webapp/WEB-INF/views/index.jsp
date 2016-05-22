@@ -81,7 +81,8 @@
         <jsp:include page="templates/login_logout.jsp"/>
     </div>
     <div>
-        <jsp:include page="templates/menu.jsp"/>
+        <a href="results">Таблица рекордов</a>
+        <%--<jsp:include page="templates/menu.jsp"/>--%>
     </div>
     <div class="heading">
         <h1 class="title">2048</h1>

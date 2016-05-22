@@ -21,6 +21,21 @@
             font-size: 18px;
         }
 
+        a {
+            color: #776e65;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.65;
+        }
+
+        #right { text-align: right; }
+
         /*.tg {*/
         /*border-collapse: collapse;*/
         /*border-spacing: 0;*/
@@ -57,9 +72,10 @@
         <jsp:include page="templates/login_logout.jsp"/>
     </div>
     <div>
-        <jsp:include page="templates/menu.jsp"/>
+        <a href="index">Вернуться к игре</a>
+        <%--<jsp:include page="templates/menu.jsp"/>--%>
     </div>
-    <h3>Таблица рекордов</h3>
+    <h2>Таблица рекордов</h2>
     <c:if test="${!empty listUsers}">
         <%--<table class="tg">--%>
         <%--<tr>--%>
@@ -77,14 +93,14 @@
             <thead>
             <tr>
                 <th>Логин</th>
-                <th>Рекорд</th>
+                <div id="right"><th>Рекорд</th></div>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${listUsers}" var="u">
                 <tr>
                     <td>${u.username}</td>
-                    <td>${u.score}</td>
+                    <div id="right"><td>${u.score}</td></div>
                 </tr>
             </c:forEach>
             </tbody>

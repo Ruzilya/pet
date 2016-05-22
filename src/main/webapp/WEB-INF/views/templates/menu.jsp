@@ -8,7 +8,7 @@
 <body>
 
 <a href="results">Таблица рекордов</a>
-<br><a href="index">Игра</a>
+<br><a href="index">Вернуться к игре</a>
 
 </body>
 </html>

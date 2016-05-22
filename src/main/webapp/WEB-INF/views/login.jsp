@@ -40,6 +40,9 @@
 <body onload='document.loginForm.username.focus();'>
 
 <div class="custom-container">
+  <div>
+    <a href="index">Вернуться к игре</a>
+  </div>
   <h1>Авторизация</h1>
 
   <h2>Введите свой логин и пароль</h2>
