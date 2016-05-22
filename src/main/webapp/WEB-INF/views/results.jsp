@@ -40,8 +40,7 @@
 <body>
 
 <div class="custom-container">
-    <div class="btn btn-lg btn-primary btn-block" class="white">
-        <%--<a href="index">Вернуться к игре</a>--%>
+    <div>
         <jsp:include page="templates/menu.jsp"/>
     </div>
     <div>
