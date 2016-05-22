@@ -14,7 +14,7 @@
 
     <style type="text/css">
         .custom-container {
-            margin: 0 auto;
+            margin: 20px auto;
             width: 500px;
             color: #776e65;
             font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
@@ -34,79 +34,38 @@
             line-height: 1.65;
         }
 
-        #right { text-align: right; }
-
-        /*.tg {*/
-        /*border-collapse: collapse;*/
-        /*border-spacing: 0;*/
-        /*border-color: #ccc;*/
-        /*}*/
-
-        /*.tg td {*/
-        /*padding: 10px 5px;*/
-        /*border-style: solid;*/
-        /*border-width: 1px;*/
-        /*overflow: hidden;*/
-        /*word-break: normal;*/
-        /*border-color: #ccc;*/
-        /*background-color: #fff;*/
-        /*}*/
-
-        /*.tg th {*/
-        /*font-weight: normal;*/
-        /*padding: 10px 5px;*/
-        /*border-style: solid;*/
-        /*border-width: 1px;*/
-        /*overflow: hidden;*/
-        /*word-break: normal;*/
-        /*border-color: #ccc;*/
-        /*background-color: #f0f0f0;*/
-        /*}*/
+        .right { text-align: right; }
     </style>
 </head>
 <body>
 
 <div class="custom-container">
-    <%--<div class="container">--%>
+    <div class="btn btn-lg btn-primary btn-block">
+        <%--<a href="index">Вернуться к игре</a>--%>
+        <jsp:include page="templates/menu.jsp"/>
+    </div>
     <div>
         <jsp:include page="templates/login_logout.jsp"/>
     </div>
-    <div>
-        <a href="index">Вернуться к игре</a>
-        <%--<jsp:include page="templates/menu.jsp"/>--%>
-    </div>
     <h2>Таблица рекордов</h2>
     <c:if test="${!empty listUsers}">
-        <%--<table class="tg">--%>
-        <%--<tr>--%>
-        <%--<th width="120">Логин</th>--%>
-        <%--<th width="120">Рекорд</th>--%>
-        <%--</tr>--%>
-        <%--<c:forEach items="${listUsers}" var="u">--%>
-        <%--<tr>--%>
-        <%--<td>${u.username}</td>--%>
-        <%--<td>${u.score}</td>--%>
-        <%--</tr>--%>
-        <%--</c:forEach>--%>
-        <%--</table>--%>
         <table class="table">
             <thead>
             <tr>
                 <th>Логин</th>
-                <div id="right"><th>Рекорд</th></div>
+                <th class="right">Рекорд</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${listUsers}" var="u">
                 <tr>
                     <td>${u.username}</td>
-                    <div id="right"><td>${u.score}</td></div>
+                    <td class="right">${u.score}</td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </c:if>
-    <%--</div>--%>
 </div>
 </body>
 </html>

@@ -6,9 +6,6 @@
   <title></title>
 </head>
 <body>
-
-<a href="results">Таблица рекордов</a>
-<br><a href="index">Вернуться к игре</a>
-
+<a href="index">Вернуться к игре</a>
 </body>
 </html>

@@ -81,7 +81,7 @@
         <jsp:include page="templates/login_logout.jsp"/>
     </div>
     <div>
-        <a href="results">Таблица рекордов</a>
+        <%--<a href="results">Таблица рекордов</a>--%>
         <%--<jsp:include page="templates/menu.jsp"/>--%>
     </div>
     <div class="heading">
@@ -97,6 +97,7 @@
     <div class="above-game">
         <p class="game-intro">Cоединяй числа и поставь рекорд!</p>
         <a class="restart-button">Новая игра</a>
+        <a class="restart-button" href="results">Таблица рекордов</a>
     </div>
 
     <div>

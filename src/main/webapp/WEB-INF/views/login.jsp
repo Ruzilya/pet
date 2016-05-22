@@ -30,7 +30,7 @@
 
     .custom-container {
       width: 500px;
-      margin: 0 auto;
+      margin: 20px auto;
       color: #776e65;
       font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
       font-size: 18px;
@@ -40,8 +40,8 @@
 <body onload='document.loginForm.username.focus();'>
 
 <div class="custom-container">
-  <div>
-    <a href="index">Вернуться к игре</a>
+  <div class="btn btn-lg btn-primary btn-block">
+    <jsp:include page="templates/menu.jsp"/>
   </div>
   <h1>Авторизация</h1>
 
