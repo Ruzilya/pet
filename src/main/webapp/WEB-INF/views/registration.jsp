@@ -53,7 +53,7 @@
 
 <div class="custom-container">
 
-  <div class="btn btn-lg btn-primary btn-block">
+  <div>
     <jsp:include page="templates/menu.jsp"/>
   </div>
 

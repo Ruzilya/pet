@@ -4,6 +4,9 @@
 <html>
 <head>
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+    <link rel="stylesheet" href='<c:url value="/resources/style/bootstrap.min.css" />' />
     <style type="text/css">
         .white {
             color: #fff;
@@ -11,8 +14,8 @@
     </style>
 </head>
 <body>
-<a href="index"><button><p class="white">Вернуться к игре</p></button></a>
-<%--<button onclick="location.href='index'">--%>
-    <%--www.example.com</button>--%>
+<button onclick="location.href='index'" class="btn btn-lg btn-primary btn-block">
+    <div class="white">Вернуться к игре</div>
+</button>
 </body>
 </html>
