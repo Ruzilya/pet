@@ -30,7 +30,7 @@
     }
 
     #white {
-      color: #fff;
+      color: #fff !important;
     }
   </style>
 
@@ -57,7 +57,7 @@
 
 <div class="custom-container">
 
-  <div id="white" class="btn btn-lg btn-primary btn-block">
+  <div class="btn btn-lg btn-primary btn-block" id="white">
     <jsp:include page="templates/menu.jsp"/>
   </div>
 

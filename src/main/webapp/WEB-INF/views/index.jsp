@@ -96,8 +96,9 @@
 
     <div class="above-game">
         <p class="game-intro">Cоединяй числа и поставь рекорд!</p>
-        <input type=checkbox id="cb1" onchange='changeTheme("cb1")'/>Использовать стандартную тему
         <a class="restart-button">Новая игра</a>
+        </br>
+        <input type=checkbox id="cb1" onchange='changeTheme("cb1")'/>Использовать стандартную тему
         <a class="restart-button" href="results" style="font-size: 11px; margin-top: 5px">Таблица рекордов</a>
     </div>
 
