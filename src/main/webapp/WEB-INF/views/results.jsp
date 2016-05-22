@@ -34,13 +34,17 @@
             line-height: 1.65;
         }
 
+        .white {
+            color: #fff;
+        }
+
         .right { text-align: right; }
     </style>
 </head>
 <body>
 
 <div class="custom-container">
-    <div class="btn btn-lg btn-primary btn-block" type="submit">
+    <div class="btn btn-lg btn-primary btn-block" class="white">
         <%--<a href="index">Вернуться к игре</a>--%>
         <jsp:include page="templates/menu.jsp"/>
     </div>

@@ -36,6 +36,10 @@
       font-size: 18px;
     }
 
+    a {
+      color: #fff;
+    }
+
     #white {
       color: #fff;
     }
