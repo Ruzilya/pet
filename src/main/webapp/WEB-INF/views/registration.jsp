@@ -28,6 +28,10 @@
       font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
       font-size: 18px;
     }
+
+    #white {
+      color: #fff;
+    }
   </style>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -53,7 +57,7 @@
 
 <div class="custom-container">
 
-  <div class="btn btn-lg btn-primary btn-block" type="submit">
+  <div id="white" class="btn btn-lg btn-primary btn-block">
     <jsp:include page="templates/menu.jsp"/>
   </div>
 
@@ -87,7 +91,7 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
   </form:form>
-  <label>Если у вас уже есть аккаунт - <a href="login">авторизуйтесь</a></label>
+  <label style="font-size: 12px; margin-top: 10px;">Если у вас уже есть аккаунт - <a href="login">авторизуйтесь</a>.</label>
 
 </div>
 <!-- /container -->

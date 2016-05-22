@@ -35,12 +35,16 @@
       font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
       font-size: 18px;
     }
+
+    #white {
+      color: #fff;
+    }
   </style>
 </head>
 <body onload='document.loginForm.username.focus();'>
 
 <div class="custom-container">
-  <div class="btn btn-lg btn-primary btn-block" type="submit">
+  <div id="white" class="btn btn-lg btn-primary btn-block">
     <jsp:include page="templates/menu.jsp"/>
   </div>
   <h1>Авторизация</h1>
@@ -62,7 +66,7 @@
     <input type="password" class="form-control" name="password" id="password"/>
     <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
-    <label>Если у вас ещё нет аккаунта - <a href="registration">зарегистрируйтесь</a></label>
+    <label style="font-size: 12px; margin-top: 10px;">Если у вас ещё нет аккаунта - <a href="registration">зарегистрируйтесь</a>.</label>
     <input type="hidden" name="${_csrf.parameterName}"
            value="${_csrf.token}" />
   </form>
