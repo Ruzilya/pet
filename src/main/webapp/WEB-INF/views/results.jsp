@@ -34,10 +34,6 @@
             line-height: 1.65;
         }
 
-        .white {
-            color: #fff;
-        }
-
         .right { text-align: right; }
     </style>
 </head>

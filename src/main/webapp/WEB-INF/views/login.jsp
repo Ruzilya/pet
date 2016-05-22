@@ -35,20 +35,12 @@
       font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
       font-size: 18px;
     }
-
-    a {
-      color: #fff;
-    }
-
-    #white {
-      color: #fff;
-    }
   </style>
 </head>
 <body onload='document.loginForm.username.focus();'>
 
 <div class="custom-container">
-  <div id="white" class="btn btn-lg btn-primary btn-block">
+  <div class="btn btn-lg btn-primary btn-block">
     <jsp:include page="templates/menu.jsp"/>
   </div>
   <h1>Авторизация</h1>

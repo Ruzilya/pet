@@ -28,14 +28,6 @@
       font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
       font-size: 18px;
     }
-
-    a {
-      color: #fff;
-    }
-
-    #white {
-      color: #fff !important;
-    }
   </style>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -61,7 +53,7 @@
 
 <div class="custom-container">
 
-  <div class="btn btn-lg btn-primary btn-block" id="white">
+  <div class="btn btn-lg btn-primary btn-block">
     <jsp:include page="templates/menu.jsp"/>
   </div>
 
