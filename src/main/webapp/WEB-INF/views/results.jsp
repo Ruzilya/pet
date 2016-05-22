@@ -40,7 +40,7 @@
 <body>
 
 <div class="custom-container">
-    <div class="btn btn-lg btn-primary btn-block">
+    <div class="btn btn-lg btn-primary btn-block" type="submit">
         <%--<a href="index">Вернуться к игре</a>--%>
         <jsp:include page="templates/menu.jsp"/>
     </div>

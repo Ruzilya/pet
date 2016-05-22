@@ -53,7 +53,7 @@
 
 <div class="custom-container">
 
-  <div class="btn btn-lg btn-primary btn-block" style="color: #fff; text-decoration: blink;">
+  <div class="btn btn-lg btn-primary btn-block" type="submit">
     <jsp:include page="templates/menu.jsp"/>
   </div>
 
@@ -87,6 +87,7 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
   </form:form>
+  <label>Если у вас уже есть аккаунт - <a href="login">авторизуйтесь</a></label>
 
 </div>
 <!-- /container -->

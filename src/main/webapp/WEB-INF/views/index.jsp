@@ -97,7 +97,7 @@
     <div class="above-game">
         <p class="game-intro">Cоединяй числа и поставь рекорд!</p>
         <a class="restart-button">Новая игра</a>
-        <a class="restart-button" href="results" style="font-size: 10px; padding-top: 5px">Таблица рекордов</a>
+        <a class="restart-button" href="results" style="font-size: 11px; margin-top: 5px">Таблица рекордов</a>
     </div>
 
     <div>
