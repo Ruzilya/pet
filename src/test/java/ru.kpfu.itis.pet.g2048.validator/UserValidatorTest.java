@@ -15,7 +15,6 @@ import static org.junit.Assert.*;
  */
 @RunWith( SpringJUnit4ClassRunner.class )
 @ContextConfiguration(locations={"classpath:spring-security.xml","classpath:servlet-context.xml"})
-//@ContextConfiguration(locations = { "classpath*:**/spring-security.xml","classpath*:**/servlet-context.xml"})
 public class UserValidatorTest {
 
     @Autowired
@@ -34,7 +33,7 @@ public class UserValidatorTest {
     }
 
     @Test
-    public void validateUserTest(){
+    public void emptyUsernameValidateTest(){
         user.setUsername("");
         String objectName = "userForm";
         Errors errors = new BeanPropertyBindingResult(user, objectName);

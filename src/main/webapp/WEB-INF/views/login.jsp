@@ -31,6 +31,9 @@
     .custom-container {
       width: 500px;
       margin: 0 auto;
+      color: #776e65;
+      font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 18px;
     }
   </style>
 </head>

@@ -16,9 +16,19 @@
   <meta name="author" content="">
 
   <title>Create an account</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+  <link rel="stylesheet" href='<c:url value="/resources/style/bootstrap.min.css" />' />
 
-  <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-  <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+  <style>
+    .custom-container {
+      width: 500px;
+      margin: 0 auto;
+      color: #776e65;
+      font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 18px;
+    }
+  </style>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -41,30 +51,32 @@
 
 <body>
 
-<div class="container">
+<div class="custom-container">
 
   <%--<form:form method="POST" modelAttribute="userForm" class="form-signin" onsubmit="return passCheck()">--%>
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
+    <h1>Регистрация</h1>
     <h2 class="form-signin-heading">Создать аккаунт</h2>
     <spring:bind path="username">
       <div class="form-group ${status.error ? 'has-error' : ''}">
-        <form:input type="text" path="username" class="form-control" placeholder="Логин"
-                    autofocus="true"></form:input>
+        <label for="username">Логин:</label>
+        <form:input type="text" path="username" class="form-control" autofocus="true"></form:input>
         <form:errors path="username"></form:errors>
       </div>
     </spring:bind>
 
     <spring:bind path="password">
       <div class="form-group ${status.error ? 'has-error' : ''}">
-        <form:input type="password" id="pass1" path="password" class="form-control" placeholder="Пароль"></form:input>
+        <label for="username">Пароль:</label>
+        <form:input type="password" id="pass1" path="password" class="form-control"></form:input>
         <form:errors path="password"></form:errors>
       </div>
     </spring:bind>
 
     <spring:bind path="passwordConfirm">
       <div class="form-group ${status.error ? 'has-error' : ''}">
-        <form:input type="password" id="pass2" path="passwordConfirm" class="form-control"
-                    placeholder="Повторите пароль"></form:input>
+        <label for="username">Повторите пароль:</label>
+        <form:input type="password" id="pass2" path="passwordConfirm" class="form-control"></form:input>
         <form:errors path="passwordConfirm"></form:errors>
       </div>
     </spring:bind>
@@ -74,7 +86,5 @@
 
 </div>
 <!-- /container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
